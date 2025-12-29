@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{B1863396-A667-42DB-97AC-C5E033CEE321}</ProjectGuid>
+    <TemplateGuid>{dd38f7fc-d7bd-488b-9242-7d8754cde80d}</TemplateGuid>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <RootNamespace>kphlib_km</RootNamespace>
+    <ProjectName>kphlib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IntDir>$(SystemInformerRoot)KSystemInformer\obj\$(Configuration)$(PlatformArchitecture)\$(ProjectName)\</IntDir>
+    <OutDir>$(SystemInformerRoot)KSystemInformer\bin\$(Configuration)$(PlatformArchitecture)\</OutDir>
+    <TargetName>kphlib_km</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>ksecdd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>"$(SolutionDir)..\tools\CustomBuildTool\bin\Release\$(PROCESSOR_ARCHITECTURE)\CustomBuildTool.exe" -dyndata "$(SolutionDir)..\bin\$(Configuration)$(PlatformArchitecture)"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <!-- sistatus
+    Compiling of the message file is only done in the kernelmode side of KPHLIB
+    so that the WDK is not a requirement only building the usermode parts. If
+    changes are made to sistatus.mc, you must build the kernel parts for the
+    header and resources to be regenerated.
+  -->
+  <ItemGroup>
+    <MessageCompile Include="sistatus.mc">
+      <GeneratedHeaderPath>true</GeneratedHeaderPath>
+      <HeaderFilePath>$(ProjectDir)include</HeaderFilePath>
+      <GeneratedRcAndMessagesPath>true</GeneratedRcAndMessagesPath>
+      <RCFilePath>$(ProjectDir)include</RCFilePath>
+      <SetCustomerbit>true</SetCustomerbit>
+      <TerminateMessageWithNull>true</TerminateMessageWithNull>
+      <UnicodeMessageInBinFile>true</UnicodeMessageInBinFile>
+      <UnicodeInputFile>true</UnicodeInputFile>
+      <Verbose>true</Verbose>
+    </MessageCompile>
+    <None Include="include\sistatus_MSG00001.bin" />
+    <ResourceCompile Include="include\sistatus.rc" />
+    <ClInclude Include="include\sistatus.h" />
+  </ItemGroup>
+  <!-- sistatus -->
+  <ItemGroup>
+    <ClInclude Include="include\kphapi.h" />
+    <ClInclude Include="include\kphdyndata.h" />
+    <ClInclude Include="include\kphlibbase.h" />
+    <ClInclude Include="include\kphmsg.h" />
+    <ClInclude Include="include\kphmsgdyn.h" />
+    <ClInclude Include="include\kphmsgdefs.h" />
+    <ClInclude Include="include\kphdyn.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="kphdyndata.c" />
+    <ClCompile Include="kphmsg.c" />
+    <ClCompile Include="kphmsgdyn.c" />
+    <ClCompile Include="kphdyn.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="kphdyn.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

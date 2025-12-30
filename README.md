@@ -1,11 +1,11 @@
-[![Build status](https://img.shields.io/github/actions/workflow/status/winsiderss/systeminformer/msbuild.yml?branch=master&style=for-the-badge)](https://github.com/winsiderss/systeminformer/actions/workflows/msbuild.yml)
-[![Build contributors](https://img.shields.io/github/contributors/winsiderss/systeminformer.svg?style=for-the-badge&color=blue)](https://github.com/winsiderss/systeminformer/graphs/contributors)
+[![Build status](https://img.shields.io/github/actions/workflow/status/system-informer-patched-repo/v3.2.25011.2103/msbuild.yml?branch=master&style=for-the-badge)](https://github.com/system-informer-patched-repo/v3.2.25011.2103/actions/workflows/msbuild.yml)
+[![Build contributors](https://img.shields.io/github/contributors/system-informer-patched-repo/v3.2.25011.2103.svg?style=for-the-badge&color=blue)](https://github.com/system-informer-patched-repo/v3.2.25011.2103/graphs/contributors)
 [![Licence](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&color=blue)](https://opensource.org/licenses/MIT)
 [![Github stats (builds)](https://img.shields.io/github/downloads/winsiderss/si-builds/total.svg?style=for-the-badge&color=blue)](https://somsubhra.github.io/github-release-stats/?username=winsiderss&repository=si-builds)
-[![Github stats](https://img.shields.io/github/downloads/winsiderss/systeminformer/total.svg?style=for-the-badge&color=blue&label=)](https://somsubhra.github.io/github-release-stats/?username=winsiderss&repository=systeminformer)
+[![Github stats](https://img.shields.io/github/downloads/system-informer-patched-repo/v3.2.25011.2103/total.svg?style=for-the-badge&color=blue&label=)](https://somsubhra.github.io/github-release-stats/?username=system-informer-patched-repo&repository=v3.2.25011.2103)
 [![SourceForge stats](https://img.shields.io/sourceforge/dt/processhacker.svg?style=for-the-badge&color=blue&label=)](https://sourceforge.net/projects/processhacker/files/stats/timeline?period=monthly)
 
-<img align="left" src="https://github.com/winsiderss/systeminformer/raw/master/SystemInformer/resources/systeminformer-128x128.png" width="128" height="128" style="max-width: 100%;padding-right: 20px;">
+<img align="left" src="https://github.com/system-informer-patched-repo/v3.2.25011.2103/raw/master/SystemInformer/resources/systeminformer-128x128.png" width="128" height="128" style="max-width: 100%;padding-right: 20px;">
 
 ## System Informer
 
@@ -45,7 +45,7 @@ See the [build readme](./build/README.md) for more information or if you're havi
 ## Enhancements/Bugs
 
 
-Please use the [GitHub issue tracker](https://github.com/winsiderss/systeminformer/issues)
+Please use the [GitHub issue tracker](https://github.com/system-informer-patched-repo/v3.2.25011.2103/issues)
 for reporting problems or suggesting new features.
 
 
